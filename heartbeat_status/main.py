@@ -9,9 +9,6 @@ from fastapi import FastAPI, Request, Response, status
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi_cache import FastAPICache
-from fastapi_cache.backends.inmemory import InMemoryBackend
-from fastapi_cache.decorator import cache
 from pydantic import BaseModel, Field
 from starlette.templating import _TemplateResponse  # noqa: TCH002
 from uvicorn import Config, Server
@@ -37,11 +34,6 @@ templates = Jinja2Templates(directory=resource_root_path / "templates")
 app.mount("/static", StaticFiles(directory=resource_root_path / "static_files"))
 
 
-@app.on_event("startup")
-async def startup() -> None:
-    FastAPICache.init(InMemoryBackend())
-
-
 @app.get("/fitbit/callback")
 async def fitbit_callback(code: str, state: str) -> RedirectResponse:  # noqa: ARG001
     return RedirectResponse(url="/")
@@ -64,7 +56,6 @@ async def root(request: Request) -> _TemplateResponse:
     )
 
 
-@cache(expire=60 * 10)
 @app.get("/graph/heartbeat")
 async def heartbeat_graph() -> HTMLResponse:
     return HTMLResponse(content=get_heartbeat_graph(), status_code=200)
