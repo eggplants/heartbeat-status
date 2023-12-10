@@ -23,7 +23,7 @@ name = "heartbeat-status"
 packages = [{include = "heartbeat_status"}]
 readme = "README.md"
 repository = "https://github.com/eggplants/heartbeat-status"
-version = "0.0.1"
+version = "0.0.2"
 
 [tool.poetry.dependencies]
 deta = "^1.2.0"
