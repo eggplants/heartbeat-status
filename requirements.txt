@@ -1,0 +1,4 @@
+# Note: This file is not for packaging but Deta deployment.
+#
+# You can find actual dependencies of this package at pyproject.toml. 
+heartbeat_status==0.0.0

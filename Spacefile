@@ -1,0 +1,27 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: fastapi
+    src: .
+    engine: python3.9
+    primary: true
+    public_routes:
+      - "/*"
+    run: "uvicorn heartbeat_status.main:app"
+    dev: "poetry run task dev"
+    presets:
+      env:
+        - name: FITBIT_CLIENT_ID
+          description: "Fitbit Client ID of registered app: https://dev.fitbit.com/"
+        - name: FITBIT_CLIENT_SECRET
+          description: "Fitbit Client Secret of registered app: https://dev.fitbit.com/"
+        - name: FITBIT_ACCESS_TOKEN
+          description: "Initial Fitbit Access Token issued at: https://dev.fitbit.com/build/reference/web-api/troubleshooting-guide/oauth2-tutorial/"
+        - name: FITBIT_REFRESH_TOKEN
+          description: "Initial Fitbit Refresh Token issued at: https://dev.fitbit.com/build/reference/web-api/troubleshooting-guide/oauth2-tutorial/"
+    actions:
+      - id: "store_data_from_fitbit"
+        name: "Store data from Fitbit"
+        description: "Store data from Fitbit"
+        trigger: "schedule"
+        default_interval: "0 * * * *"
