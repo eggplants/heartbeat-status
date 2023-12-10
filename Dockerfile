@@ -1,4 +1,5 @@
-FROM python:3
+FROM python:3.11
+# https://github.com/sdispater/pendulum/issues/753
 
 ARG VERSION
 ENV VERSION ${VERSION:-master}
