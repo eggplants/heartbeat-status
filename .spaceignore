@@ -6,3 +6,5 @@ README.md
 .git/
 .space/
 __pycache__/
+.mypy_cache/
+.ruff_cache/
