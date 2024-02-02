@@ -36,7 +36,7 @@ python = ">=3.9,<4"
 python-dotenv = "^1.0.0"
 requests = "^2.31.0"
 starlette = "0.27.0"
-uvicorn = "^0.24.0.post1"
+uvicorn = ">=0.24,<0.28"
 pandas-stubs = "^2.1.1.230928"
 
 [tool.poetry.group.dev.dependencies]
