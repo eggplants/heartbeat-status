@@ -36,7 +36,7 @@ python-dotenv = "^1.0.0"
 requests = "^2.31.0"
 uvicorn = ">=0.24,<0.28"
 pandas-stubs = "^2.1.1.230928"
-fastapi = "^0.109.2"
+fastapi = ">=0.109.2,<0.111.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = ">=0.991,<1.9"
