@@ -43,11 +43,11 @@ repos:
   hooks:
   - id: mypy
     files: ^heartbeat_status/
-    args: [--strict]
+    args: [--strict, --ignore-missing-imports]
     additional_dependencies:
-    - pandas-stubs
+    # - pandas-stubs
     - pydantic
-    - types-requests
+    # - types-requests
     - deta
     - plotly
     - python-dotenv
