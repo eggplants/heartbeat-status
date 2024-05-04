@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 
 import pandas as pd
-import plotly.express as px  # type: ignore[import-untyped]
+import plotly.express as px
 
 from .deta import get_deta_base_val
 from .models import HeartBeatDataByMin
