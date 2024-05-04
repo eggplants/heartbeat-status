@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from deta import Deta  # type: ignore[import-untyped]
+from deta import Deta
 from pydantic import BaseModel
 
 __DETA_BASE_CREDENTIAL_DB_KEY = "fitbit_credential_db"
