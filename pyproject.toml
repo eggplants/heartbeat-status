@@ -39,9 +39,9 @@ pydantic = "^2.5.2"
 python = ">=3.9,<4"
 python-dotenv = "^1.0.0"
 requests = "^2.31.0"
-uvicorn = ">=0.24,<0.31"
+uvicorn = ">=0.24,<0.32"
 pandas-stubs = "^2.1.1.230928"
-fastapi = ">=0.109.2,<0.113.0"
+fastapi = ">=0.109.2,<0.116.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = ">=0.991,<1.12"
