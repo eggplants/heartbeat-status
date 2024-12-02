@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
-from starlette.templating import _TemplateResponse  # noqa: TCH002
+from starlette.templating import _TemplateResponse  # noqa: TC002
 from uvicorn import Config, Server
 
 from . import __version__
